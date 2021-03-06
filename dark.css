@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #0093e9;
+  background-image: linear-gradient(
+    160deg,
+    rgb(8, 8, 8) 0%,
+    #1b1b1b,
+    #232323 100%
+  );
+  color: white;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+  color: #ebac0c;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.3rem;
+  border: none;
+  font-size: 2rem;
+  border-color: rgb(172, 172, 172);
+  background: rgb(199, 199, 199);
+}
+
+form button {
+  color: #ebac0c;
+  background: rgb(199, 199, 199);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+form button:hover {
+  background: #ebac0c;
+  color: rgb(199, 199, 199);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  width: 10rem;
+  padding: 1rem;
+  background: rgb(199, 199, 199);
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.select::after {
+  color: rgb(199, 199, 199);
+  content: "\25bc";
+  position: absolute;
+  background: #ebac0c;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  background: rgb(199, 199, 199);
+  color: #ebac0c;
+  transition: all 0.4s ease;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  list-style: none;
+  min-width: 30%;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: rgb(199, 199, 199);
+  color: #000;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.completed-btn {
+  padding: 1rem;
+  border: none;
+  background: #fa4745;
+  color: rgb(199, 199, 199);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.completed-btn {
+  background: rgb(84, 187, 84);
+}
+.trash-btn:hover {
+  background: rgb(199, 199, 199);
+  color: #fa4745;
+}
+.completed-btn:hover {
+  background: rgb(199, 199, 199);
+  color: rgb(84, 187, 84);
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.out {
+  transform: translateY(8rem) rotateZ(15deg);
+  opacity: 0;
+}
