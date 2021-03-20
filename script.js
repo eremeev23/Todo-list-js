@@ -2,7 +2,8 @@ const todoInput = document.querySelector('.todo-input');
 const todoBtn = document.querySelector('.todo-btn');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter');
-const changeBtn = document.querySelector('.change-theme-btn');
+const changeBtn = document.querySelector('.change-theme-btn-drk');
+const removeBtn = document.querySelector('.change-theme-btn-lght');
 
 document.addEventListener('DOMContentLoaded', getTodos)
 //ADD TODO
@@ -159,6 +160,7 @@ function saveLocalStatus(todo){
     }
 
 // CHANGE THEME
+    removeBtn.style.display = 'none';
 
 changeBtn.onclick = function changeTheme(){
     const todos = todoList.childNodes;
@@ -171,9 +173,7 @@ changeBtn.onclick = function changeTheme(){
     header.classList.remove('light-header');
     header.classList.add('dark-header');
 
-    const changeButton = document.querySelector('.change-theme-btn');
-    changeButton.classList.remove('light-change-btn');
-    changeButton.classList.add('dark-change-btn');
+    changeBtn.style.display = 'none';
 
     const hr = document.querySelector('.hr');
     hr.classList.remove('light-hr');
@@ -193,5 +193,41 @@ changeBtn.onclick = function changeTheme(){
 
     const filterTodo = document.querySelector('.filter');
     filterTodo.classList.remove('light-filter');
-    filterTodo.classList.add('dark-filter');  
+    filterTodo.classList.add('dark-filter');
+
+    removeBtn.style.display = 'inline-block';
     }
+
+removeBtn.onclick = function removeTheme(){
+    const body = document.querySelector('.body');
+    body.classList.remove('dark-theme');
+    body.classList.add('light-theme');
+
+    const header = document.querySelector('.header');
+    header.classList.remove('dark-header');
+    header.classList.add('light-header');
+
+    changeBtn.style.display = 'inline-block';
+    
+    removeBtn.style.display = 'none';
+
+    const hr = document.querySelector('.hr');
+    hr.classList.remove('dark-hr');
+    hr.classList.add('light-hr');
+
+    const plusBtn = document.querySelector('.todo-btn');
+    plusBtn.classList.remove('dark-btn');
+    plusBtn.classList.add('light-btn');
+
+    const todoInput = document.querySelector('.todo-input');
+    todoInput.classList.remove('dark-input');
+    todoInput.classList.add('light-input');
+
+    const select = document.querySelector('.select');
+    select.classList.remove('dark-select');
+    select.classList.add('light-select');
+
+    const filterTodo = document.querySelector('.filter');
+    filterTodo.classList.remove('dark-filter');
+    filterTodo.classList.add('light-filter');
+}
